@@ -3,12 +3,15 @@ import { useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
+  Pressable,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View,
 } from "react-native";
 import { fecthServiceRequests } from "../api/calls";
 import Item from "../comps/Item";
+import { Link } from "expo-router";
 
 export default function MyExpo() {
   const {
@@ -43,12 +46,17 @@ export default function MyExpo() {
       {isLoading && <ActivityIndicator />}
       {isError && <Text>Error</Text>}
       {isSuccess && (
-        <FlatList
-          data={sreqs.data}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          extraData={selectedId}
-        />
+        <View>
+          <FlatList
+            data={sreqs.data}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+            extraData={selectedId}
+          />
+          <TouchableHighlight style={{ padding: 30 }}>
+            <Link href="/home">Go to Home</Link>
+          </TouchableHighlight>
+        </View>
       )}
     </View>
   );
