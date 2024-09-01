@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -41,6 +41,8 @@ export default function MyExpo() {
     );
   };
 
+  useEffect(() => {}, [selectedId]);
+
   return (
     <View style={styles.container}>
       {isLoading && <ActivityIndicator />}
@@ -53,9 +55,8 @@ export default function MyExpo() {
             keyExtractor={(item) => item.id}
             extraData={selectedId}
           />
-          <TouchableHighlight style={{ padding: 30 }}>
-            <Link href="/home">Go to Home</Link>
-          </TouchableHighlight>
+
+          <Link href="/home">Go to Home</Link>
         </View>
       )}
     </View>
