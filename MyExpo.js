@@ -6,21 +6,9 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
 } from "react-native";
-import { fecthServiceRequests } from "./api/call";
-
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
-  <TouchableOpacity
-    onPress={onPress}
-    style={[styles.item, { backgroundColor }]}
-  >
-    <Text style={[{ color: textColor }]}>
-      {item.user_data.display_name} - {item.user_data.phone}
-    </Text>
-    <Text style={[styles.title, { color: textColor }]}>{item.label}</Text>
-  </TouchableOpacity>
-);
+import { fecthServiceRequests } from "./api/calls";
+import Item from "./comps/Item";
 
 export default function MyExpo() {
   const {
@@ -39,7 +27,7 @@ export default function MyExpo() {
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === selectedId ? "white" : "black";
-    console.log(item);
+
     return (
       <Item
         item={item}
