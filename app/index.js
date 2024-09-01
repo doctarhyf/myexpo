@@ -1,9 +1,12 @@
-import { Text, View } from "react-native";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import MyExpo from "./MyExpo";
+
+const queryProvider = new QueryClient();
 
 export default function Page() {
   return (
-    <View>
-      <Text>Cool</Text>
-    </View>
+    <QueryClientProvider client={queryProvider}>
+      <MyExpo />
+    </QueryClientProvider>
   );
 }
