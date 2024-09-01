@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import MyExpo from "./MyExpo";
+import MyExpo from ".";
 
 const queryClient = new QueryClient();
 
