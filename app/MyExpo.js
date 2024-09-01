@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { fecthServiceRequests } from "../api/calls";
 import Item from "../comps/Item";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 
 export default function MyExpo() {
   const {
@@ -56,7 +56,9 @@ export default function MyExpo() {
             extraData={selectedId}
           />
 
-          <Link href="/home">Go to Home</Link>
+          <Link push href="/home">
+            Go to Home
+          </Link>
         </View>
       )}
     </View>
