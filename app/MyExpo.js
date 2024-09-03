@@ -33,8 +33,8 @@ export default function MyExpo() {
 
     const handlePress = () => {
       router.push({
-        pathname: "/item",
-        params: { ...item },
+        pathname: "/details",
+        params: { ...item, user_data: JSON.stringify(item.user_data) },
       });
     };
 
