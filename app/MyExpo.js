@@ -1,17 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState, useEffect } from "react";
+import { Link, router } from "expo-router";
+import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
-  Pressable,
   StyleSheet,
   Text,
-  TouchableHighlight,
   View,
 } from "react-native";
 import { fecthServiceRequests } from "../api/calls";
 import Item from "../comps/Item";
-import { Link, router } from "expo-router";
+import * as Icon from "react-native-feather";
 
 export default function MyExpo() {
   const {
@@ -63,8 +62,17 @@ export default function MyExpo() {
             extraData={selectedId}
           />
 
-          <Link push href="/home">
-            <Text className=" p-4  text-3xl text-center m-4 "> Go to Home</Text>
+          <Link
+            push
+            href="/home"
+            className=" bg-sky-400 flex justify-center items-center  "
+          >
+            <View className=" flex flex-row bg-red-400   items-center justify-between mx-0   ">
+              <Icon.CloudRain width={25} height={25} stroke={"red"} />
+              <Text className=" p-4 w-fit  text-3xl text-center m-4 ">
+                Go to Home
+              </Text>
+            </View>
           </Link>
         </View>
       )}
