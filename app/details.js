@@ -1,6 +1,6 @@
-import { View, Text } from "react-native";
-import React from "react";
 import { useLocalSearchParams } from "expo-router";
+import React from "react";
+import { Text, View } from "react-native";
 
 export default function Page({ navigation }) {
   const item = useLocalSearchParams();

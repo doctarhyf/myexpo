@@ -55,7 +55,7 @@ export default function MyExpo() {
       {isLoading && <ActivityIndicator />}
       {isError && <Text>Error</Text>}
       {isSuccess && (
-        <View>
+        <View className=" flex-1  ">
           <FlatList
             data={sreqs.data}
             renderItem={renderItem}
@@ -64,7 +64,7 @@ export default function MyExpo() {
           />
 
           <Link push href="/home">
-            Go to Home
+            <Text className=" p-4  text-3xl text-center m-4 "> Go to Home</Text>
           </Link>
         </View>
       )}
