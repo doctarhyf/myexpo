@@ -4,12 +4,12 @@ import { Text, TouchableOpacity, View } from "react-native";
 export default function Home() {
   return (
     <View>
-      <Text>Home</Text>
-      <TouchableOpacity>
-        <Link href="/">
-          <Text style={{ padding: 30 }}>Main cool</Text>
-        </Link>
-      </TouchableOpacity>
+      <View className="flex-1 items-center justify-center bg-white">
+        <Text className=" text-red-500 ">
+          Open up App.js to start working on your app!
+        </Text>
+        <StatusBar style="auto" />
+      </View>
     </View>
   );
 }

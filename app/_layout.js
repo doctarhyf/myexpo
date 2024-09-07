@@ -46,6 +46,7 @@ export default function RootLayout() {
         }}
       />
       <Stack.Screen name="details" />
+      <Stack.Screen name="new" options={{ headerTitle: "New Item" }} />
     </Stack>
   );
 }
